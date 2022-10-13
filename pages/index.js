@@ -5,24 +5,37 @@ import styles from "../styles/Home.module.css";
 export default function Home() {
   return (
     <>
-      <div
-        className={
-          "d-flex flex-column align-items-center " + styles.sectionMain
-        }
-      >
-        <div className={styles.subtitle}>URBAN CLEANING EXPERT</div>
-        <div className={styles.taglineBig}>
-          Quality home cleaning servcies, on demand
+      <div className={styles.sectionMain}>
+        <div>
+          <div className={styles.subtitle}>URBAN CLEANING EXPERT</div>
+          <div className={styles.taglineBig}>
+            Quality home cleaning servcies, on demand
+          </div>
+          <div className={styles.taglineSmall}>
+            Experienced, hand-picked professionals to serve you at your doorstep
+          </div>
+          <select
+            className={styles.selectLocation}
+            name="location"
+            id="location"
+          >
+            <option>Select your Location</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Mumbar">Mumbai</option>
+            <option value="Lucknow">Lucknow</option>
+          </select>
+          <div className={styles.selectLocationBigScreen}>
+            <div>Where do you need a service?</div>
+            <div className={styles.selectLocationBigScreen__select}>
+              <select name="location" id="">
+                <option>Select your city</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Mumbai">Mumbai</option>
+              </select>
+              <img src="/images/select_down_arrow.svg" />
+            </div>
+          </div>
         </div>
-        <div className={styles.taglineSmall}>
-          Experienced, hand-picked professionals to serve you at your doorstep
-        </div>
-        <select className={styles.selectLocation} name="locatoin" id="location">
-          <option>Select your Location</option>
-          <option value="Delhi">Delhi</option>
-          <option value="Mumbar">Mumbai</option>
-          <option value="Lucknow">Lucknow</option>
-        </select>
       </div>
       <div className={"d-flex flex-column " + styles.sectionBenefits}>
         <div className={styles.sectionBenefits__title}>

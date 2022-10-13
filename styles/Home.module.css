@@ -1,10 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Montserrat:wght@600&family=Mulish:wght@400;500;600&family=Poppins:wght@400;600&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Montserrat:wght@600&family=Mulish:wght@400;500;600&family=Poppins:wght@400;500;600&family=Roboto&display=swap");
 /* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Montserrat:wght@600&family=Mulish:wght@400;500&family=Roboto&display=swap"); */
 /* @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Mulish:wght@400;500&family=Roboto&display=swap"); */
 
 .sectionMain {
-  width: 100vw;
+  width: 100%;
   height: 535px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%),
     url("/images/plumber_image.png");
@@ -73,6 +76,10 @@
 
 .selectLocation:focus-visible {
   outline: 0;
+}
+
+.selectLocationBigScreen {
+  display: none;
 }
 
 /* Benefits section */
@@ -231,4 +238,97 @@
   letter-spacing: 0.08em;
 
   color: #ffffff;
+}
+
+@media screen and (min-width: 1200px) {
+  .sectionMain {
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0) 26.82%,
+        rgba(0, 0, 0, 0.7) 58.3%
+      ),
+      url("/images/plumber_and_kitchen.png");
+    background-size: cover;
+    padding-top: 66px;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .sectionMain > div {
+    margin-right: 68px;
+    max-width: 771px;
+  }
+
+  .subtitle,
+  .taglineBig,
+  .taglineSmall {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .subtitle {
+    font-size: 21.2796px;
+    line-height: 25px;
+  }
+
+  .taglineBig {
+    font-size: 39.5974px;
+    line-height: 48px;
+    max-width: 652px;
+  }
+
+  .taglineSmall {
+    font-size: 24.0759px;
+    line-height: 30px;
+  }
+
+  .selectLocation {
+    display: none;
+  }
+
+  .selectLocationBigScreen {
+    width: 418px;
+    height: 168px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background: #ffffff;
+    border-radius: 5px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    padding: 32px 23px;
+    margin-top: 46px;
+    margin-bottom: 56px;
+  }
+
+  .selectLocationBigScreen div {
+    font-weight: 500;
+  }
+
+  .selectLocationBigScreen div:first-child {
+    margin-bottom: 22px;
+  }
+
+  .selectLocationBigScreen select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: #ffffff;
+    border: 0;
+    width: 306px;
+  }
+
+  .selectLocationBigScreen select:focus-visible {
+    outline: 0;
+  }
+
+  .selectLocationBigScreen__select {
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    min-width: 372px;
+    padding: 11px 18px;
+  }
 }
