@@ -111,9 +111,13 @@ export default function Home() {
         </div>
       </div>
       <div className={styles.sectionFooter}>
-        <div>
+        <div className={styles.sectionFooter__heading_text}>
           <div className={styles.sectionFooter__headings}>TOP LOCATIONS</div>
-          <div className={styles.sectionFooter__text}>
+          <div
+            className={
+              styles.sectionFooter__text + " " + styles.sectionFooter__mw73
+            }
+          >
             Noida • Delhi • Gurgaon • Ghaziabad • Faridabad • Agra • Ahmedabad •
             Amritsar • Aurangabad • Bangalore • Bhopal • Bhubaneswar •
             Chandigarh • Chennai • Coimbatore • Dehradun • Greater Noida •
@@ -125,9 +129,13 @@ export default function Home() {
             Visakhapatnam
           </div>
         </div>
-        <div>
+        <div className={styles.sectionFooter__heading_text}>
           <div className={styles.sectionFooter__headings}>Contact Us</div>
-          <div className={styles.sectionFooter__text}>
+          <div
+            className={
+              styles.sectionFooter__text + " " + styles.sectionFooter__mw73
+            }
+          >
             <div>Phone : +91 782 762 1417</div>
             <div>Email : support@roservicecenter.live</div>
           </div>
