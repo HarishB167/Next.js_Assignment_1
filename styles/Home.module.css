@@ -130,6 +130,8 @@
 
 /* About section */
 .sectionAbout {
+  display: flex;
+  flex-direction: column;
   padding-top: 22px;
   padding-bottom: 4px;
   background: #276600;
@@ -371,5 +373,41 @@
   .sectionBenefits__list {
     font-size: 24px;
     line-height: 29px;
+  }
+
+  /* About section */
+  .sectionAbout {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+
+    padding-top: 42px;
+    padding-bottom: 45px;
+  }
+
+  .sectionAbout > div:first-child {
+    max-width: 725px;
+  }
+
+  .sectionAbout__title {
+    border-radius: 25px;
+    font-size: 23.807px;
+    line-height: 29px;
+  }
+
+  .sectionAbout__paragraph {
+    font-size: 21.86px;
+    line-height: 149.52%;
+  }
+
+  .sectionAbout__feature {
+    width: 274px;
+    height: 166px;
+    margin: 15px;
+  }
+
+  .sectionAbout__feature img {
+    width: 75px;
+    height: 75px;
   }
 }

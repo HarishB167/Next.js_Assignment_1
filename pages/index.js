@@ -62,7 +62,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className={"d-flex flex-column " + styles.sectionAbout}>
+      <div className={styles.sectionAbout}>
         <div>
           <div>
             <span className={styles.sectionAbout__title}>
