@@ -3,9 +3,7 @@ import Link from "next/link";
 
 const Nav = () => {
   return (
-    <nav
-      className={"navbar navbar-expand-lg bg-light w-100" + ` ${navStyles.nav}`}
-    >
+    <nav className={"navbar navbar-expand-xl w-100" + ` ${navStyles.nav}`}>
       <div className={"container-fluid" + ` ${navStyles.containerFluid}`}>
         <button
           className="navbar-toggler"
@@ -34,25 +32,72 @@ const Nav = () => {
             <img src="images/phone-icon.svg" alt="" />
           </a>
         </Link>
-        <div className="collapse navbar-collapse" id="navbarNav">
+        <div
+          className={"collapse navbar-collapse " + navStyles.navbarCollapse}
+          id="navbarNav"
+        >
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
-                Home
+              <a className="nav-link" aria-current="page" href="#">
+                APPLIANCES CARE
+                <img src="/images/down_arrow.svg" alt="" />
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
-                Features
+                HOME CARE
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
-                Pricing
+                GADGET CARE
+                <img src="/images/down_arrow.svg" />
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link disabled">Disabled</a>
+              <a className="nav-link" href="#">
+                HANDYMAN
+                <img src="/images/down_arrow.svg" />
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                BEAUTY CARE
+                <img src="/images/down_arrow.svg" />
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                FITNESS CARE
+                <img src="/images/down_arrow.svg" />
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                BUSINESS CARE
+                <img src="/images/down_arrow.svg" />
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                ALL SERVICES
+                <img src="/images/down_arrow.svg" />
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                BLOG
+                <img src="/images/down_arrow.svg" />
+              </a>
+            </li>
+            <li className={"nav-item " + navStyles.callButtonForFullPage}>
+              <div>
+                <div>
+                  <img src="/images/call_icon.svg" />
+                  Service Helpline
+                </div>
+                <span>782 762 1417</span>
+              </div>
             </li>
           </ul>
         </div>

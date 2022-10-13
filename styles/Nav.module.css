@@ -1,5 +1,5 @@
 .nav {
-  height: 52px;
+  min-height: 52px;
   background: #ffffff;
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
   padding: 6px 0px;
@@ -37,4 +37,93 @@
 
 .whatsappIcon {
   margin-right: 22px;
+}
+
+.callButtonForFullPage {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  .nav {
+    max-height: 60px;
+  }
+
+  .nav,
+  .navbarCollapse {
+    background: #095296;
+    justify-content: flex-end;
+  }
+
+  .navbarCollapse ul {
+    margin-right: 81px;
+    align-items: center;
+  }
+
+  .navbarCollapse ul li a {
+    font-family: "Mulish";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  .navbarCollapse ul li a img {
+    margin-left: 5px;
+  }
+
+  .navbarCollapse ul li a:hover {
+    color: #9b9b9b;
+  }
+
+  .phoneIcon,
+  .navbarBrand {
+    display: none;
+  }
+
+  .whatsappIcon {
+    position: absolute;
+    top: 11px;
+    right: 25px;
+    margin-right: 0;
+  }
+
+  .callButtonForFullPage {
+    display: list-item;
+    cursor: pointer;
+  }
+
+  .callButtonForFullPage img {
+    margin-right: 6px;
+  }
+
+  .callButtonForFullPage > div {
+    width: 185px;
+    height: 43px;
+    border: 1.69725px solid #ffffff;
+    border-radius: 4.24312px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Montserrat";
+    font-style: normal;
+    text-align: center;
+    margin-left: 18px;
+
+    color: #ffffff;
+  }
+
+  .callButtonForFullPage > div > div {
+    font-weight: 700;
+    font-size: 17.8211px;
+    line-height: 22px;
+  }
+  .callButtonForFullPage > div > span {
+    font-weight: 600;
+    font-size: 15.2752px;
+    line-height: 19px;
+  }
 }
