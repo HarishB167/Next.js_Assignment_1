@@ -37,21 +37,29 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className={"d-flex flex-column " + styles.sectionBenefits}>
-        <div className={styles.sectionBenefits__title}>
-          Why People Choose Us
-        </div>
-        <div className={"d-flex " + styles.sectionBenefits__list}>
-          <ul>
-            <li>Affordable Rates</li>
-            <li>On Time Service</li>
-            <li>Verified Professionals</li>
-            <li>Excellent Service</li>
-          </ul>
-          <img
-            src="/images/why-standing-let-us-dance.png"
-            alt="Girl holding smartphone and listening music"
-          />
+      <div className={styles.sectionBenefits}>
+        <img
+          className={styles.sectionBenefits__largeScreenImg}
+          src="/images/why-standing-let-us-dance_largeScreen.png"
+          alt=""
+        />
+        <div>
+          <div className={styles.sectionBenefits__title}>
+            Why People Choose Us
+          </div>
+          <div className={styles.sectionBenefits__list}>
+            <ul>
+              <li>Affordable Rates</li>
+              <li>On Time Service</li>
+              <li>Verified Professionals</li>
+              <li>Excellent Service</li>
+            </ul>
+            <img
+              src="/images/why-standing-let-us-dance.png"
+              alt="Girl holding smartphone and listening music"
+              loading="lazy"
+            />
+          </div>
         </div>
       </div>
       <div className={"d-flex flex-column " + styles.sectionAbout}>

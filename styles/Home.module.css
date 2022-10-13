@@ -83,16 +83,18 @@
 }
 
 /* Benefits section */
-.sectionBenefits {
+.sectionBenefits > div {
   width: 100%;
   padding-top: 40px;
   padding-left: 17px;
   padding-bottom: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.sectionBenefits img {
-  width: 151px;
-  height: 134px;
+.sectionBenefits__largeScreenImg {
+  display: none;
 }
 
 .sectionBenefits__title {
@@ -101,11 +103,17 @@
   font-weight: 600;
   font-size: 17.5814px;
   line-height: 21px;
-
+  align-self: start;
   color: #025b5d;
 }
 
+.sectionBenefits__list img {
+  width: 151px;
+  height: 134px;
+}
+
 .sectionBenefits__list {
+  display: flex;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
@@ -330,5 +338,38 @@
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
     min-width: 372px;
     padding: 11px 18px;
+  }
+
+  /* Benefits section */
+  .sectionBenefits__list img {
+    display: none;
+  }
+
+  .sectionBenefits {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
+  .sectionBenefits > div {
+    max-width: 448px;
+    align-items: start;
+  }
+
+  .sectionBenefits__largeScreenImg {
+    display: block;
+    width: 510px;
+    height: 361px;
+    margin-top: 23px;
+  }
+
+  .sectionBenefits__title {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  .sectionBenefits__list {
+    font-size: 24px;
+    line-height: 29px;
   }
 }
