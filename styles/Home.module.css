@@ -71,7 +71,7 @@
   font-style: normal;
   font-weight: 500;
   font-size: 17px;
-  line-height: 21px;
+  line-height: 20px;
 }
 
 .selectLocation:focus-visible {
@@ -233,8 +233,12 @@
 
 .sectionFooter__socialLinks {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin: 0 0 30px 0;
+}
+
+.sectionFooter__socialLinks a {
+  margin: 0 12px;
 }
 
 .sectionFooter__copyrightInfo {
@@ -404,6 +408,8 @@
     width: 274px;
     height: 166px;
     margin: 15px;
+    font-size: 16.6065px;
+    line-height: 20px;
   }
 
   .sectionAbout__feature img {

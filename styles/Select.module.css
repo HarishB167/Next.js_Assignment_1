@@ -1,0 +1,19 @@
+.select {
+  display: flex;
+  justify-content: space-between;
+}
+
+.select select {
+  background: #ffffff;
+  border-radius: 4px;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: #ffffff;
+  border: 0;
+  flex-grow: 1;
+}
+
+.select select:focus-visible {
+  outline: 0;
+}
