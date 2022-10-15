@@ -219,11 +219,17 @@
 }
 
 .sectionWhyChooseUs__imagesList,
-.sectionSafetyMeasures__imagesList,
-.sectionAwardsCertification__imagesList {
+.sectionSafetyMeasures__imagesList {
   display: flex;
   justify-content: space-evenly;
   align-items: end;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+.sectionAwardsCertification__imagesList {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   margin-bottom: 15px;
   margin-top: 15px;
 }
@@ -386,6 +392,21 @@
 
 /* FAQ Section */
 .sectionFAQ {
-  margin: 0 25.5px;
+  margin: 0 25.5px 19.5px;
   width: calc(100% - 25.5px);
+}
+
+/* Community Talks Section */
+.sectionCommunityTalks {
+  padding: 0 27px;
+  width: 100%;
+  margin-bottom: 122px;
+}
+
+.sectionCommunityTalks__title {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14.3px;
+  line-height: 16px;
 }

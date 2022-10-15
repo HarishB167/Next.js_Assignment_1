@@ -1,0 +1,71 @@
+.communityTalksList__border {
+  margin: 0 18px;
+}
+.communityTalksListItem {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 400;
+}
+
+.communityTalksListItem__noBorder {
+  margin-left: 11px;
+}
+
+.communityTalksListItem__border {
+  border: 0.5px solid #d9d9d9;
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-bottom: 9px;
+  margin-top: 5.5px;
+  margin-bottom: 5.5px;
+}
+
+.communityTalksListItem__row1 {
+  display: flex;
+  justify-content: space-between;
+  border-left: 2px solid #1265b1;
+  padding-left: 4px;
+  margin-top: 6px;
+}
+
+.communityTalksListItem__row1_flexRow {
+  flex-direction: row;
+  align-items: end;
+}
+
+.communityTalksListItem__row1_flexCol {
+  flex-direction: column;
+}
+
+.communityTalksListItem__name {
+  font-size: 14.5px;
+  line-height: 14px;
+  color: #616161;
+}
+
+.communityTalksListItem__dateTime {
+  font-size: 9.5px;
+  line-height: 9px;
+  margin-top: 2px;
+}
+
+.communityTalksListItem button {
+  font-size: 11px;
+  line-height: 11px;
+
+  color: #ffffff;
+  background: #1265b1;
+  border-radius: 5px;
+  padding: 5px 3.5px;
+  border: 0;
+}
+
+.communityTalksListItem__dateTime button:focus-visible {
+  outline: 0;
+}
+
+.communityTalksListItem__row2 {
+  font-size: 9.5px;
+  line-height: 10px;
+  margin: 10px 0;
+}

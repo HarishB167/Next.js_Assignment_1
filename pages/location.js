@@ -3,9 +3,11 @@ import Select from "../components/Select";
 import ServiceList from "../components/ServiceList";
 import PlansList from "../components/PlansList";
 import { data } from "../json/allData";
+import { otherData } from "../json/otherData";
 import StarReviews from "../components/StarReviews";
 import ProfessionalDetailCard from "../components/ProfessionalDetailCard";
 import FaqList from "../components/FaqList";
+import CommunityTalksList from "../components/CommunityTalksList";
 
 export default function Location() {
   const servicesList = data[0].cards.filter(
@@ -41,6 +43,7 @@ export default function Location() {
     },
   ];
   const faq = data[0].faq;
+  const communityTalks = otherData.communityTalks;
 
   return (
     <>
@@ -238,6 +241,16 @@ export default function Location() {
 
       <div className={styles.sectionFAQ}>
         <FaqList faqList={faq} />
+      </div>
+
+      <div className={styles.sectionCommunityTalks}>
+        <div className={styles.sectionCommunityTalks__title}>
+          Community Talks
+        </div>
+        <CommunityTalksList
+          talksList={communityTalks}
+          showReplayButton={true}
+        />
       </div>
     </>
   );
