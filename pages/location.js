@@ -44,6 +44,8 @@ export default function Location() {
   ];
   const faq = data[0].faq;
   const communityTalks = otherData.communityTalks;
+  const servingIn = data[0].internalLinks.servingAreas;
+  const alsoAvailableIn = data[0].internalLinks.alsoAvailableIn.slice(0, 10);
 
   return (
     <>
@@ -251,6 +253,97 @@ export default function Location() {
           talksList={communityTalks}
           showReplayButton={true}
         />
+      </div>
+
+      <div className={styles.sectionQuickLinks}>
+        <div className={styles.sectionQuickLinks__title}>Quick Links</div>
+        <div className={styles.sectionQuickLinks__subsection}>
+          <div className={styles.sectionQuickLinks__subtitle}>Serving in</div>
+          <div className={styles.sectionQuickLinks__linksList}>
+            <span>
+              <a href={servingIn[0].link}>{servingIn[0].anchorText}</a>
+            </span>
+            {servingIn.slice(1).map((item, idx) => (
+              <>
+                <span className={styles.sectionQuickLinks__dot}> &#9679; </span>
+                <span key={idx}>
+                  <a href={item.link}>{item.anchorText}</a>
+                </span>
+              </>
+            ))}
+          </div>
+        </div>
+        <div className={styles.sectionQuickLinks__subsection}>
+          <div className={styles.sectionQuickLinks__subtitle}>
+            Also available in
+          </div>
+          <div className={styles.sectionQuickLinks__linksList}>
+            <span>
+              <a href={alsoAvailableIn[0].link}>
+                {alsoAvailableIn[0].anchorText}
+              </a>
+            </span>
+            {alsoAvailableIn.slice(1).map((item, idx) => (
+              <>
+                <span className={styles.sectionQuickLinks__dot}> &#9679; </span>
+                <span key={idx}>
+                  <a href={item.link}>{item.anchorText}</a>
+                </span>
+              </>
+            ))}
+            <span className={styles.sectionQuickLinks__dot}> &#9679; </span>
+            <span className={styles.sectionQuickLinks__seeMore}>
+              <a>See more</a>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div className={styles.sectionFooter}>
+        <div className={styles.sectionFooter__heading_text}>
+          <div className={styles.sectionFooter__headings}>Contact Us</div>
+          <div
+            className={
+              styles.sectionFooter__text + " " + styles.sectionFooter__mw73
+            }
+          >
+            <div>Phone : +91 782 762 1417</div>
+            <div>Email : support@roservicecenter.live</div>
+          </div>
+        </div>
+        <div className={styles.sectionFooter__text}>
+          <ul>
+            <li>About Us</li>
+            <li>Blog</li>
+            <li>Near me</li>
+            <li>Terms &amp; Conditions</li>
+            <li>Privacy Policy</li>
+            <li>Contact Us</li>
+          </ul>
+        </div>
+        <div className={styles.sectionFooter__socialLinks}>
+          <a href="#">
+            <img src="/images/instagram_icon_dark.svg" alt="Instagram" />
+          </a>
+          <a href="#">
+            <img src="/images/twitter_icon_dark.svg" alt="Twitter" />
+          </a>
+          <a href="#">
+            <img src="/images/linkedin_icon_dark.svg" alt="LinkedIn" />
+          </a>
+          <a href="#">
+            <img src="/images/facebook_icon_dark.svg" alt="Facebook" />
+          </a>
+          <a href="#">
+            <img src="/images/youtube_icon_dark.svg" alt="Youtube" />
+          </a>
+          <a href="#">
+            <img src="/images/pinterest_icon_dark.svg" alt="Pinterest" />
+          </a>
+        </div>
+        <div className={styles.sectionFooter__copyrightInfo}>
+          <span>&copy; 2022 House Cleaning Expert</span>
+        </div>
       </div>
     </>
   );

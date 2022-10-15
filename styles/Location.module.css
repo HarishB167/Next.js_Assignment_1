@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Montserrat:wght@600&family=Mulish:wght@400;500;600&family=Poppins:wght@400;500;600&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Montserrat:wght@600&family=Mulish:wght@400;500;600&family=Poppins:wght@400;500;600&family=Roboto:wght@400;500;600&display=swap");
 
 .sectionLocationInfo {
   width: 100%;
@@ -409,4 +409,112 @@
   font-weight: 400;
   font-size: 14.3px;
   line-height: 16px;
+}
+
+/* Quick Links section */
+.sectionQuickLinks {
+  width: calc(100% - 22px);
+  margin: 0 15px 46px 7px;
+  font-family: "Roboto";
+  font-style: normal;
+}
+
+.sectionQuickLinks__title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 33.7972px;
+  line-height: 40px;
+}
+
+.sectionQuickLinks__subtitle {
+  margin-top: 13px;
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 26px;
+}
+
+.sectionQuickLinks__linksList {
+  display: inline;
+  margin-bottom: 14px;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 168.19%;
+  color: #7c7c7c;
+}
+
+.sectionQuickLinks__linksList span {
+  margin: 0 2px;
+}
+
+.sectionQuickLinks__dot {
+  font-size: 9px;
+}
+
+.sectionQuickLinks__seeMore {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 168.19%;
+  text-decoration-line: underline;
+  color: #000000;
+}
+
+/* Footer section */
+
+.sectionFooter {
+  background: #ededed;
+  padding: 23px 30px;
+  width: 100%;
+}
+
+.sectionFooter__headings {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.08em;
+  color: #025b5d;
+}
+
+.sectionFooter__text {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 180.5%;
+  margin-bottom: 40px;
+  color: #464646;
+}
+
+.sectionFooter ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sectionFooter__socialLinks {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 30px 0;
+}
+
+.sectionFooter__socialLinks a {
+  margin: 0 12px;
+}
+
+.sectionFooter__copyrightInfo {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  display: flex;
+  justify-content: center;
+  letter-spacing: 0.08em;
+  color: #464646;
 }
