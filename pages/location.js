@@ -5,6 +5,7 @@ import PlansList from "../components/PlansList";
 import { data } from "../json/allData";
 import StarReviews from "../components/StarReviews";
 import ProfessionalDetailCard from "../components/ProfessionalDetailCard";
+import FaqList from "../components/FaqList";
 
 export default function Location() {
   const servicesList = data[0].cards.filter(
@@ -39,6 +40,7 @@ export default function Location() {
       keywords: "kent, Livpure, Aquaguard, DoctorFresh, Zero -B",
     },
   ];
+  const faq = data[0].faq;
 
   return (
     <>
@@ -201,6 +203,41 @@ export default function Location() {
             <ProfessionalDetailCard key={idx} details={item} />
           ))}
         </div>
+      </div>
+
+      <div className={styles.sectionMoreServices}>
+        <span className={styles.sectionMoreServices__title}>
+          YOU MAY ALSO NEED THESE SERVICES
+        </span>
+        <div className={styles.sectionMoreServices__list}>
+          <span>WASHING MACHINE</span>
+          <span>WASHING MACHINE</span>
+          <span>WASHING MACHINE</span>
+          <span>WASHING MACHINE</span>
+        </div>
+      </div>
+
+      <div className={styles.sectionMostUsedServices}>
+        <div className={styles.sectionMostUsedServices__title}>
+          Most Used Services
+        </div>
+        <div className={styles.sectionMostUsedServices__subtitle}>
+          Premium Home Services
+        </div>
+        <div className={styles.sectionMostUsedServices__servicesList}>
+          <div>
+            <img src="/images/termites.png" />
+            <span>Termite Control</span>
+          </div>
+          <div>
+            <img src="/images/bed_bugs.png" />
+            <span>Bed Bugs</span>
+          </div>
+        </div>
+      </div>
+
+      <div className={styles.sectionFAQ}>
+        <FaqList faqList={faq} />
       </div>
     </>
   );

@@ -1,0 +1,29 @@
+.faqList {
+}
+
+.hideAnswer {
+  display: none;
+}
+
+.faqListItem {
+  margin: 5.5px 0px;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10.6284px;
+  line-height: 13px;
+  color: #ffffff;
+  padding: 13px;
+}
+
+.faqListItem__answer_hidden_bg {
+  background: #1265b1;
+}
+
+.faqListItem__answer_shown_bg {
+  background: #544fa9;
+}
+
+.faqListItem__answer {
+  padding: 6px 6px 0 6px;
+}
