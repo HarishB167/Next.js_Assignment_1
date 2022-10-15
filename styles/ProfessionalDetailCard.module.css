@@ -1,0 +1,70 @@
+.card {
+  /* width: 312.07px;
+  height: 144.16px; */
+  margin: 2px 7px;
+  background: #ffffff;
+  box-shadow: 0px 0px 2.31589px rgba(0, 0, 0, 0.25);
+  border-radius: 8.68458px;
+  padding: 17.3px 11.6px;
+}
+
+.card_row1 {
+  display: flex;
+}
+
+.card_imageNrating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card_basicInfo {
+  margin-left: 13.9px;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 13px;
+  align-self: end;
+}
+
+.card_servingNexperience {
+  display: flex;
+  font-size: 10.6px;
+  line-height: 11px;
+}
+
+.card_servingNexperience > div {
+  display: flex;
+  flex-direction: column;
+  margin-right: 42.5px;
+  margin-top: 6.4px;
+}
+
+.card_basicInfo button,
+.card_keywords {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 10.6px;
+  line-height: 11px;
+}
+
+.card_basicInfo button {
+  color: #ffffff;
+  background: #1265b1;
+  border-radius: 5.78972px;
+  border: 0;
+  margin-bottom: 7.2px;
+  margin-top: 11.6px;
+  padding: 3.5px 5.7px;
+}
+
+.card_basicInfo button:focus-visible {
+  outline: 0;
+}
+
+.card_keywords {
+  margin-top: 9.6px;
+  margin-left: 15.6px;
+}

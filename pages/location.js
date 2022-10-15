@@ -3,6 +3,8 @@ import Select from "../components/Select";
 import ServiceList from "../components/ServiceList";
 import PlansList from "../components/PlansList";
 import { data } from "../json/allData";
+import StarReviews from "../components/StarReviews";
+import ProfessionalDetailCard from "../components/ProfessionalDetailCard";
 
 export default function Location() {
   const servicesList = data[0].cards.filter(
@@ -11,6 +13,32 @@ export default function Location() {
   const plansList = data[0].cards.filter((item) => item.cardType === "amc");
   const brandsImageLinks = data[0].brands;
   const reviews = data[0].reviews;
+  const professionalsList = [
+    {
+      name: "Akhilesh Kumar Thakur",
+      rating: "4",
+      imageUrl: "/images/profile_sample_1.png",
+      totalServing: "2,200",
+      experienceInYears: "5.2",
+      keywords: "kent, Livpure, Aquaguard, DoctorFresh, Zero -B",
+    },
+    {
+      name: "Akhilesh Kumar Thakur",
+      rating: "3",
+      imageUrl: "/images/profile_sample_1.png",
+      totalServing: "2,200",
+      experienceInYears: "5.2",
+      keywords: "kent, Livpure, Aquaguard, DoctorFresh, Zero -B",
+    },
+    {
+      name: "Akhilesh Kumar Thakur",
+      rating: "5",
+      imageUrl: "/images/profile_sample_1.png",
+      totalServing: "2,200",
+      experienceInYears: "5.2",
+      keywords: "kent, Livpure, Aquaguard, DoctorFresh, Zero -B",
+    },
+  ];
 
   return (
     <>
@@ -128,7 +156,7 @@ export default function Location() {
       </div>
 
       <div className={styles.sectionReviews}>
-        <div className={styles.sectionReviews___title}>
+        <div className={styles.sectionReviews__title}>
           Read What our customers say
         </div>
         <hr />
@@ -137,7 +165,7 @@ export default function Location() {
             <>
               <div className={styles.sectionReviews__reviewsListItem}>
                 <img src="/images/user_icon.svg" />
-                <div>{review.rating}</div>
+                <StarReviews rating={parseInt(review.rating)} />
                 <div className={styles.sectionReviews__custName}>
                   {review.custName}
                 </div>
@@ -147,6 +175,30 @@ export default function Location() {
               </div>
               <div className={styles.sectionReviews__vr}></div>
             </>
+          ))}
+        </div>
+      </div>
+
+      <div className={styles.sectionAwardsCertification}>
+        <div className={styles.sectionAwardsCertification__title}>
+          Award and Certification
+        </div>
+        <hr />
+        <div className={styles.sectionAwardsCertification__imagesList}>
+          <img src="/images/certificate_iso.svg" alt="" />
+          <img src="/images/registered_trademark.svg" alt="" />
+          <img src="/images/consumer_excellence_award.svg" alt="" />
+        </div>
+      </div>
+
+      <div className={styles.sectionProfessionalsList}>
+        <div className={styles.sectionProfessionalsList__title}>
+          Our Professional
+        </div>
+        <hr />
+        <div className={styles.sectionProfessionalsList__professionalList}>
+          {professionalsList.map((item, idx) => (
+            <ProfessionalDetailCard key={idx} details={item} />
           ))}
         </div>
       </div>

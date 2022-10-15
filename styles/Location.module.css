@@ -175,12 +175,13 @@
   outline: 0;
 }
 
-/* Why choose us & Safety Measures 
- & Trusted Service & Reviews provider section */
+/* Why choose us, Safety Measures,
+ Trusted Service & Reviews provider,
+ Reviews, Awards & Certification section */
 .sectionWhyChooseUs,
 .sectionSafetyMeasures,
 .sectionTrustedServProv,
-.sectionReviews {
+.sectionAwardsCertification {
   margin: 0 6px;
   width: calc(100% - 12px);
   background: #ffffff;
@@ -188,10 +189,20 @@
   margin-bottom: 25px;
 }
 
+.sectionReviews,
+.sectionProfessionalsList {
+  margin: 0 6px;
+  width: calc(100% - 12px);
+  background: #ffffff;
+  margin-bottom: 25px;
+}
+
 .sectionWhyChooseUs___title,
 .sectionSafetyMeasures___title,
 .sectionTrustedServProv___title,
-.sectionReviews__title {
+.sectionReviews__title,
+.sectionAwardsCertification__title,
+.sectionProfessionalsList__title {
   font-weight: 400;
   font-size: 13.7px;
   line-height: 14px;
@@ -202,13 +213,14 @@
 .sectionWhyChooseUs hr,
 .sectionSafetyMeasures hr,
 .sectionTrustedServProv hr,
-.sectionReviews hr {
+.sectionReviews hr .sectionAwardsCertification hr {
   margin: 1px 8px;
-  border-top: 0.89px solid #cccccc;
+  border-top: 0.95px solid #d9d9d9;
 }
 
 .sectionWhyChooseUs__imagesList,
-.sectionSafetyMeasures__imagesList {
+.sectionSafetyMeasures__imagesList,
+.sectionAwardsCertification__imagesList {
   display: flex;
   justify-content: space-evenly;
   align-items: end;
@@ -249,7 +261,8 @@
   border: 0.58px solid #000000;
 }
 
-.sectionReviews__reviewsList {
+.sectionReviews__reviewsList,
+.sectionProfessionalsList__professionalList {
   width: 100%;
   display: flex;
   overflow: auto;
@@ -271,7 +284,7 @@
   font-size: 12.2px;
 }
 
-.sectionReviews__reviewsListItem img {
+.sectionReviews__reviewsListItem > img {
   width: 64px;
   height: 64px;
 }
@@ -282,8 +295,9 @@
   text-align: center;
   color: #000000;
   white-space: normal;
+  margin-top: 4.71px;
 }
 
 .sectionReviews__vr {
-  border: 0.95px solid #d9d9d9;
+  border-right: 0.95px solid #d9d9d9;
 }
