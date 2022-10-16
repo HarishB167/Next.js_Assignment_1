@@ -1,3 +1,4 @@
+import { useMediaQuery } from "react-responsive";
 import styles from "../styles/Location.module.css";
 import Select from "../components/Select";
 import ServiceList from "../components/ServiceList";
@@ -10,6 +11,7 @@ import FaqList from "../components/FaqList";
 import CommunityTalksList from "../components/CommunityTalksList";
 
 export default function Location() {
+  const offerBanner = data[0].offerBanner;
   const servicesList = data[0].cards.filter(
     (item) => item.cardType === "service"
   );
@@ -47,9 +49,23 @@ export default function Location() {
   const servingIn = data[0].internalLinks.servingAreas;
   const alsoAvailableIn = data[0].internalLinks.alsoAvailableIn.slice(0, 10);
 
+  const isBigScreen = useMediaQuery({ query: "(min-width: 1000px)" });
+  const backgroundImageUrl = isBigScreen
+    ? `linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0) 60%),
+        url("${data[0].heroSection.webBanner}")`
+    : `linear-gradient(90deg, rgba(0, 0, 0, 0.4) 0%,
+        rgba(0, 0, 0, 0) 100%),
+        url("${data[0].heroSection.mobBanner}")`;
+
   return (
     <>
-      <div className={styles.sectionLocationInfo}>
+      <div
+        className={styles.sectionLocationInfo}
+        style={{
+          backgroundImage: backgroundImageUrl,
+        }}
+      >
         <div>RO Service Near Me In Greater Noida @7065012902 | RO Service</div>
         <ul>
           <li>
@@ -70,231 +86,264 @@ export default function Location() {
           </li>
         </ul>
       </div>
+
       <div className={styles.sectionPromotions}>
-        <img src="/images/promo_1.png" />
-        <img src="/images/promo_2.png" />
-        <img src="/images/promo_3.png" />
-        <img src="/images/promo_4.png" />
-        <img src="/images/promo_5.png" />
-      </div>
-      <div className={styles.sectionServiceSelection}>
-        <Select
-          name="cleaningOptions"
-          id="clieaningOptions"
-          defaultText="Select House Cleaning-Options"
-          addStylesClass={styles.sectionServiceSelection__select}
-          optionsKeyPairs={{
-            option_1: "Option 1",
-            option_2: "Option 2",
-            option_3: "Option 3 ",
-            option_4: "Option 4",
-          }}
-        />
-        <input type="text" placeholder="Enter Name" />
-        <div className={styles.sectionServiceSelection__phones}>
-          <input type="text" placeholder="Phone Number" />
-          <input type="text" placeholder="Alternate Number" />
-        </div>
-        <input type="text" placeholder="Pincode or Address" />
-        <button>Submit</button>
-        <span>Average call back time : 12 min</span>
-      </div>
-      <div className={styles.sectionServicesList}>
-        <div className={styles.sectionServiceList__title}>
-          Water Purifier Service Near You
-        </div>
-        <ServiceList servicesList={servicesList} />
-        <button className={styles.sectionServiceList__moreBtn}>More</button>
+        {offerBanner.map((item, idx) => (
+          <a key={idx} href={item.landingUrl}>
+            <img src={item.imgUrl} />
+          </a>
+        ))}
       </div>
 
-      <div className={styles.sectionBrowseAmcPlans}>
-        <div className={styles.sectionBrowseAmcPlans__title}>
-          Browse AMC Plans
-        </div>
-        <PlansList plansList={plansList} />
-      </div>
-
-      <div className={styles.sectionWhyChooseUs}>
-        <div className={styles.sectionWhyChooseUs___title}>Why Choose us?</div>
-        <hr />
-        <div className={styles.sectionWhyChooseUs__imagesList}>
-          <img src="/images/certified_professionals.svg" alt="" />
-          <img src="/images/service_warranty.svg" alt="" />
-          <img src="/images/instant_booking.svg" alt="" />
-          <img src="/images/affordable_price.svg" alt="" />
-        </div>
-      </div>
-
-      <div className={styles.sectionSafetyMeasures}>
-        <div className={styles.sectionSafetyMeasures___title}>
-          Safety Measures
-        </div>
-        <hr />
-        <div className={styles.sectionSafetyMeasures__imagesList}>
-          <div>
-            <img src="/images/masks.svg" alt="" />
-            <span>Usage of masks &amp; gloves</span>
-          </div>
-          <div>
-            <img src="/images/thermometer.svg" alt="" />
-            <span>Temperature checks</span>
-          </div>
-          <div>
-            <img src="/images/sanitizer.svg" alt="" />
-            <span>Sanitizetion of tool &amp; area</span>
-          </div>
-          <div>
-            <img src="/images/arogya_setu.svg" alt="" />
-            <span>Arogya setu to ensure safely</span>
+      <div className={styles.columnContainer}>
+        <div className={styles.firstColumn}>
+          <div className={styles.sectionServiceSelection}>
+            <Select
+              name="cleaningOptions"
+              id="clieaningOptions"
+              defaultText="Select House Cleaning-Options"
+              addStylesClass={styles.sectionServiceSelection__select}
+              optionsKeyPairs={{
+                option_1: "Option 1",
+                option_2: "Option 2",
+                option_3: "Option 3 ",
+                option_4: "Option 4",
+              }}
+            />
+            <input type="text" placeholder="Enter Name" />
+            <div className={styles.sectionServiceSelection__phones}>
+              <input type="text" placeholder="Phone Number" />
+              <input type="text" placeholder="Alternate Number" />
+            </div>
+            <input type="text" placeholder="Pincode or Address" />
+            <button>Submit</button>
+            <span>Average call back time : 12 min</span>
           </div>
         </div>
-      </div>
 
-      <div className={styles.sectionTrustedServProv}>
-        <div className={styles.sectionTrustedServProv___title}>
-          Trusted Service Provider
-        </div>
-        <hr />
-        <div className={styles.sectionTrustedServProv__imagesList}>
-          {brandsImageLinks.map((link) => (
-            <img src={link} />
-          ))}
-        </div>
-      </div>
+        <div className={styles.secondColumn}>
+          {isBigScreen && (
+            <ul className={styles.breadcrumb}>
+              <li className={styles.breadcrumb_root}>
+                <span>Home</span>
+              </li>
+              <li className={styles.breadcrumb_item}>
+                <span>Noida</span>
+              </li>
+              <li className={styles.breadcrumb_current}>
+                <span>Water Purifier</span>
+              </li>
+            </ul>
+          )}
 
-      <div className={styles.sectionReviews}>
-        <div className={styles.sectionReviews__title}>
-          Read What our customers say
-        </div>
-        <hr />
-        <div className={styles.sectionReviews__reviewsList}>
-          {reviews.map((review) => (
-            <>
-              <div className={styles.sectionReviews__reviewsListItem}>
-                <img src="/images/user_icon.svg" />
-                <StarReviews rating={parseInt(review.rating)} />
-                <div className={styles.sectionReviews__custName}>
-                  {review.custName}
-                </div>
-                <div className={styles.sectionReviews__review}>
-                  {review.review}
-                </div>
+          <div className={styles.sectionServicesList}>
+            <div className={styles.sectionServiceList__title}>
+              Water Purifier Service Near You
+            </div>
+            <ServiceList servicesList={servicesList} />
+            <button className={styles.sectionServiceList__moreBtn}>More</button>
+          </div>
+
+          <div className={styles.sectionBrowseAmcPlans}>
+            <div className={styles.sectionBrowseAmcPlans__title}>
+              Browse AMC Plans
+            </div>
+            <PlansList plansList={plansList} />
+          </div>
+
+          <div className={styles.sectionWhyChooseUs}>
+            <div className={styles.sectionWhyChooseUs___title}>
+              Why Choose us?
+            </div>
+            <hr />
+            <div className={styles.sectionWhyChooseUs__imagesList}>
+              <img src="/images/certified_professionals.svg" alt="" />
+              <img src="/images/service_warranty.svg" alt="" />
+              <img src="/images/instant_booking.svg" alt="" />
+              <img src="/images/affordable_price.svg" alt="" />
+            </div>
+          </div>
+
+          <div className={styles.sectionSafetyMeasures}>
+            <div className={styles.sectionSafetyMeasures___title}>
+              Safety Measures
+            </div>
+            <hr />
+            <div className={styles.sectionSafetyMeasures__imagesList}>
+              <div>
+                <img src="/images/masks.svg" alt="" />
+                <span>Usage of masks &amp; gloves</span>
               </div>
-              <div className={styles.sectionReviews__vr}></div>
-            </>
-          ))}
-        </div>
-      </div>
-
-      <div className={styles.sectionAwardsCertification}>
-        <div className={styles.sectionAwardsCertification__title}>
-          Award and Certification
-        </div>
-        <hr />
-        <div className={styles.sectionAwardsCertification__imagesList}>
-          <img src="/images/certificate_iso.svg" alt="" />
-          <img src="/images/registered_trademark.svg" alt="" />
-          <img src="/images/consumer_excellence_award.svg" alt="" />
-        </div>
-      </div>
-
-      <div className={styles.sectionProfessionalsList}>
-        <div className={styles.sectionProfessionalsList__title}>
-          Our Professional
-        </div>
-        <hr />
-        <div className={styles.sectionProfessionalsList__professionalList}>
-          {professionalsList.map((item, idx) => (
-            <ProfessionalDetailCard key={idx} details={item} />
-          ))}
-        </div>
-      </div>
-
-      <div className={styles.sectionMoreServices}>
-        <span className={styles.sectionMoreServices__title}>
-          YOU MAY ALSO NEED THESE SERVICES
-        </span>
-        <div className={styles.sectionMoreServices__list}>
-          <span>WASHING MACHINE</span>
-          <span>WASHING MACHINE</span>
-          <span>WASHING MACHINE</span>
-          <span>WASHING MACHINE</span>
-        </div>
-      </div>
-
-      <div className={styles.sectionMostUsedServices}>
-        <div className={styles.sectionMostUsedServices__title}>
-          Most Used Services
-        </div>
-        <div className={styles.sectionMostUsedServices__subtitle}>
-          Premium Home Services
-        </div>
-        <div className={styles.sectionMostUsedServices__servicesList}>
-          <div>
-            <img src="/images/termites.png" />
-            <span>Termite Control</span>
+              <div>
+                <img src="/images/thermometer.svg" alt="" />
+                <span>Temperature checks</span>
+              </div>
+              <div>
+                <img src="/images/sanitizer.svg" alt="" />
+                <span>Sanitizetion of tool &amp; area</span>
+              </div>
+              <div>
+                <img src="/images/arogya_setu.svg" alt="" />
+                <span>Arogya setu to ensure safely</span>
+              </div>
+            </div>
           </div>
-          <div>
-            <img src="/images/bed_bugs.png" />
-            <span>Bed Bugs</span>
+
+          <div className={styles.sectionTrustedServProv}>
+            <div className={styles.sectionTrustedServProv___title}>
+              Trusted Service Provider
+            </div>
+            <hr />
+            <div className={styles.sectionTrustedServProv__imagesList}>
+              {brandsImageLinks.map((link) => (
+                <img src={link} />
+              ))}
+            </div>
           </div>
-        </div>
-      </div>
 
-      <div className={styles.sectionFAQ}>
-        <FaqList faqList={faq} />
-      </div>
+          <div className={styles.sectionReviews}>
+            <div className={styles.sectionReviews__title}>
+              Read What our customers say
+            </div>
+            <hr />
+            <div className={styles.sectionReviews__reviewsList}>
+              {reviews.map((review) => (
+                <>
+                  <div className={styles.sectionReviews__reviewsListItem}>
+                    <img src="/images/user_icon.svg" />
+                    <StarReviews rating={parseInt(review.rating)} />
+                    <div className={styles.sectionReviews__custName}>
+                      {review.custName}
+                    </div>
+                    <div className={styles.sectionReviews__review}>
+                      {review.review}
+                    </div>
+                  </div>
+                  <div className={styles.sectionReviews__vr}></div>
+                </>
+              ))}
+            </div>
+          </div>
 
-      <div className={styles.sectionCommunityTalks}>
-        <div className={styles.sectionCommunityTalks__title}>
-          Community Talks
-        </div>
-        <CommunityTalksList
-          talksList={communityTalks}
-          showReplayButton={true}
-        />
-      </div>
+          <div className={styles.sectionAwardsCertification}>
+            <div className={styles.sectionAwardsCertification__title}>
+              Award and Certification
+            </div>
+            <hr />
+            <div className={styles.sectionAwardsCertification__imagesList}>
+              <img src="/images/certificate_iso.svg" alt="" />
+              <img src="/images/registered_trademark.svg" alt="" />
+              <img src="/images/consumer_excellence_award.svg" alt="" />
+            </div>
+          </div>
 
-      <div className={styles.sectionQuickLinks}>
-        <div className={styles.sectionQuickLinks__title}>Quick Links</div>
-        <div className={styles.sectionQuickLinks__subsection}>
-          <div className={styles.sectionQuickLinks__subtitle}>Serving in</div>
-          <div className={styles.sectionQuickLinks__linksList}>
-            <span>
-              <a href={servingIn[0].link}>{servingIn[0].anchorText}</a>
+          <div className={styles.sectionProfessionalsList}>
+            <div className={styles.sectionProfessionalsList__title}>
+              Our Professional
+            </div>
+            <hr />
+            <div className={styles.sectionProfessionalsList__professionalList}>
+              {professionalsList.map((item, idx) => (
+                <ProfessionalDetailCard key={idx} details={item} />
+              ))}
+            </div>
+          </div>
+
+          <div className={styles.sectionMoreServices}>
+            <span className={styles.sectionMoreServices__title}>
+              YOU MAY ALSO NEED THESE SERVICES
             </span>
-            {servingIn.slice(1).map((item, idx) => (
-              <>
-                <span className={styles.sectionQuickLinks__dot}> &#9679; </span>
-                <span key={idx}>
-                  <a href={item.link}>{item.anchorText}</a>
+            <div className={styles.sectionMoreServices__list}>
+              <span>WASHING MACHINE</span>
+              <span>WASHING MACHINE</span>
+              <span>WASHING MACHINE</span>
+              <span>WASHING MACHINE</span>
+            </div>
+          </div>
+
+          <div className={styles.sectionMostUsedServices}>
+            <div className={styles.sectionMostUsedServices__title}>
+              Most Used Services
+            </div>
+            <div className={styles.sectionMostUsedServices__subtitle}>
+              Premium Home Services
+            </div>
+            <div className={styles.sectionMostUsedServices__servicesList}>
+              <div>
+                <img src="/images/termites.png" />
+                <span>Termite Control</span>
+              </div>
+              <div>
+                <img src="/images/bed_bugs.png" />
+                <span>Bed Bugs</span>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.sectionFAQ}>
+            <FaqList faqList={faq} />
+          </div>
+
+          <div className={styles.sectionCommunityTalks}>
+            <div className={styles.sectionCommunityTalks__title}>
+              Community Talks
+            </div>
+            <CommunityTalksList
+              talksList={communityTalks}
+              showReplayButton={true}
+            />
+          </div>
+
+          <div className={styles.sectionQuickLinks}>
+            <div className={styles.sectionQuickLinks__title}>Quick Links</div>
+            <div className={styles.sectionQuickLinks__subsection}>
+              <div className={styles.sectionQuickLinks__subtitle}>
+                Serving in
+              </div>
+              <div className={styles.sectionQuickLinks__linksList}>
+                <span>
+                  <a href={servingIn[0].link}>{servingIn[0].anchorText}</a>
                 </span>
-              </>
-            ))}
-          </div>
-        </div>
-        <div className={styles.sectionQuickLinks__subsection}>
-          <div className={styles.sectionQuickLinks__subtitle}>
-            Also available in
-          </div>
-          <div className={styles.sectionQuickLinks__linksList}>
-            <span>
-              <a href={alsoAvailableIn[0].link}>
-                {alsoAvailableIn[0].anchorText}
-              </a>
-            </span>
-            {alsoAvailableIn.slice(1).map((item, idx) => (
-              <>
-                <span className={styles.sectionQuickLinks__dot}> &#9679; </span>
-                <span key={idx}>
-                  <a href={item.link}>{item.anchorText}</a>
+                {servingIn.slice(1).map((item, idx) => (
+                  <>
+                    <span className={styles.sectionQuickLinks__dot}>
+                      {" "}
+                      &#9679;{" "}
+                    </span>
+                    <span key={idx}>
+                      <a href={item.link}>{item.anchorText}</a>
+                    </span>
+                  </>
+                ))}
+              </div>
+            </div>
+            <div className={styles.sectionQuickLinks__subsection}>
+              <div className={styles.sectionQuickLinks__subtitle}>
+                Also available in
+              </div>
+              <div className={styles.sectionQuickLinks__linksList}>
+                <span>
+                  <a href={alsoAvailableIn[0].link}>
+                    {alsoAvailableIn[0].anchorText}
+                  </a>
                 </span>
-              </>
-            ))}
-            <span className={styles.sectionQuickLinks__dot}> &#9679; </span>
-            <span className={styles.sectionQuickLinks__seeMore}>
-              <a>See more</a>
-            </span>
+                {alsoAvailableIn.slice(1).map((item, idx) => (
+                  <>
+                    <span className={styles.sectionQuickLinks__dot}>
+                      {" "}
+                      &#9679;{" "}
+                    </span>
+                    <span key={idx}>
+                      <a href={item.link}>{item.anchorText}</a>
+                    </span>
+                  </>
+                ))}
+                <span className={styles.sectionQuickLinks__dot}> &#9679; </span>
+                <span className={styles.sectionQuickLinks__seeMore}>
+                  <a>See more</a>
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

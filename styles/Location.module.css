@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Montserrat:wght@600&family=Mulish:wght@400;500;600&family=Poppins:wght@400;500;600&family=Roboto:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Montserrat:wght@600&family=Mulish:wght@400;500;600;700;900&family=Poppins:wght@400;500;600&family=Roboto:wght@400;500;600&display=swap");
 
 .sectionLocationInfo {
   width: 100%;
@@ -11,8 +11,6 @@
   line-height: 16px;
 
   color: #ffffff;
-
-  background: url("/images/ro_in_kitchen_image.png") no-repeat;
   background-size: cover;
 }
 
@@ -53,13 +51,27 @@
   height: 135px;
   border-radius: 1.39175px;
   margin: 5px;
+  object-fit: cover;
 }
 
-/* Appointments section */
+/* Column container */
+.columnContainer,
+.firstColumn,
+.secondColumn {
+  width: 100%;
+}
+
+.secondColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Service Selection section */
 
 .sectionServiceSelection {
   margin: 5px 10px 10px;
-  width: calc(100% - 10px);
+  width: calc(100% - 20px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -173,6 +185,16 @@
 
 .sectionServiceList__moreBtn:focus-visible {
   outline: 0;
+}
+
+/* Browse AMC Plans section */
+
+.sectionBrowseAmcPlans {
+  padding: 20px 7px 0 7px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
 }
 
 /* Why choose us, Safety Measures,
@@ -393,7 +415,7 @@
 /* FAQ Section */
 .sectionFAQ {
   margin: 0 25.5px 19.5px;
-  width: calc(100% - 25.5px);
+  width: calc(100% - 51px);
 }
 
 /* Community Talks Section */
@@ -517,4 +539,176 @@
   justify-content: center;
   letter-spacing: 0.08em;
   color: #464646;
+}
+
+@media screen and (min-width: 1000px) {
+  .sectionLocationInfo {
+    height: 40vw;
+    font-weight: 900;
+    font-size: 35px;
+    line-height: 44px;
+    padding: 4.55vw 4.34vw;
+  }
+
+  .sectionLocationInfo > div {
+    max-width: 1237px;
+  }
+
+  .sectionLocationInfo ul {
+    list-style-type: initial;
+    padding-left: 3.52vw;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    margin-top: 4.27vw;
+  }
+
+  .sectionLocationInfo ul img {
+    display: none;
+  }
+
+  /* Promotions section */
+  .sectionPromotions img {
+    border-radius: 7px;
+  }
+
+  /* Column container */
+
+  .columnContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 64px;
+  }
+
+  .firstColumn {
+    width: 30%;
+  }
+  .secondColumn {
+    width: 61%;
+    margin-left: 6.77vw;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+  }
+
+  /* Bread crumbs */
+
+  .breadcrumb {
+    display: flex;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    list-style-type: none;
+    margin: 0;
+    font-family: "Mulish";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 23px;
+    color: #ffffff;
+    background: #d9d9d9;
+    border-radius: 5px 5px 0px 0px;
+  }
+
+  .breadcrumb span {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 3px;
+    left: 6px;
+  }
+
+  .breadcrumb_root,
+  .breadcrumb_item {
+    border-right: 3px solid white;
+  }
+
+  .breadcrumb_root::after,
+  .breadcrumb_item::after {
+    border-left: 11px solid #544fa9;
+  }
+  .breadcrumb_current::after {
+    border-left: 11px solid #0b6e38;
+  }
+
+  .breadcrumb_root::after,
+  .breadcrumb_item::after,
+  .breadcrumb_current::after,
+  .breadcrumb_item::before,
+  .breadcrumb_current::before {
+    display: inline-flex;
+    content: " ";
+    position: relative;
+    bottom: 3px;
+    width: 0;
+    height: 0;
+    border-top: 21px solid transparent;
+    border-bottom: 21px solid transparent;
+  }
+  .breadcrumb_root::after,
+  .breadcrumb_item::after,
+  .breadcrumb_current::after {
+    z-index: 1;
+    right: -10px;
+  }
+
+  .breadcrumb_item::before,
+  .breadcrumb_current::before {
+    right: 0;
+    border-left: 10px solid white;
+  }
+
+  .breadcrumb_root,
+  .breadcrumb_item,
+  .breadcrumb_current {
+    height: 36px;
+  }
+
+  .breadcrumb_root,
+  .breadcrumb_item {
+    background: #544fa9;
+  }
+
+  .breadcrumb_current {
+    background: #0b6e38;
+  }
+
+  /* Service selection section */
+  .sectionServiceSelection {
+    margin: 5px 1.56vw;
+    width: calc(100% - 3.12vw);
+  }
+
+  /* Services List section */
+  .sectionServicesList {
+    padding: 20px 7px 0 7px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sectionServiceList__title {
+    margin-bottom: 5px;
+    margin-left: 17.5px;
+    font-weight: 800;
+    font-size: 25px;
+    line-height: 31px;
+  }
+
+  .sectionServiceList__moreBtn {
+    display: none;
+  }
+
+  /* Browse AMC Plans section */
+
+  .sectionBrowseAmcPlans__title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    margin-left: 17.5px;
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  .sectionLocationInfo {
+    height: 28vw;
+  }
 }

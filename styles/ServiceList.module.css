@@ -7,12 +7,18 @@
   color: #000000;
   font-size: 13.7px;
   line-height: 14px;
-  max-width: 353px;
   align-self: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .servicesListItem {
   margin: 11px 0;
+  margin-left: 6.5px;
+  margin-right: 6.5px;
+  min-width: 28.38vw;
 }
 
 .servicesListItem > div {
@@ -71,4 +77,46 @@
 
 .servicesListItem__priceNbook button:focus-visible {
   outline: 0;
+}
+
+@media screen and (min-width: 1000px) {
+  .servicesList {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  .servicesListItem {
+    border: 1px solid #d9d9d9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+  }
+  .servicesListItem img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    min-width: 28.38vw;
+  }
+
+  .servicesListItem ul {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .servicesListItem__price {
+    font-weight: 800;
+    font-size: 25px;
+    line-height: 31px;
+  }
+
+  .servicesListItem__tncApply,
+  .servicesListItem__priceNbook button {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 19px;
+  }
+  .servicesListItem__priceNbook button {
+    border-radius: 5px;
+    width: 83px;
+    height: 30px;
+  }
 }

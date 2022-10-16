@@ -21,12 +21,12 @@ const PlansListItem = ({ plan }) => {
               {item.split(":")[1].trim() == "true" ? (
                 <>
                   <img src={greenTickImagePath} />
-                  <span>Include</span>
+                  <span className={styles.plansListItem__includeOrExclude}>Include</span>
                 </>
               ) : (
                 <>
                   <img src={redCrossImagePath} />
-                  <span>Exclude</span>
+                  <span className={styles.plansListItem__includeOrExclude}>Exclude</span>
                 </>
               )}
             </li>

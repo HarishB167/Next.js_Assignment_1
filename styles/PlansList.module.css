@@ -7,12 +7,16 @@
   color: #000000;
   font-size: 11.374px;
   line-height: 14px;
-  max-width: 353px;
   align-self: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .plansListItem {
   margin: 11px 0;
+  min-width: 28.38vw;
 }
 
 .plansListItem > div {
@@ -64,4 +68,53 @@
   height: 10px;
   margin-right: 13px;
   object-fit: cover;
+}
+
+@media screen and (min-width: 1000px) {
+  .plansListItem {
+    border: 1px solid #d9d9d9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+  }
+
+  .plansListItem {
+    margin-left: 0.75vw;
+    margin-right: 0.75vw;
+    max-width: 28.38vw;
+    min-width: 340px;
+  }
+
+  .plansListItem__cardBanner {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    max-width: 28.38vw;
+    min-width: 340px;
+  }
+
+  .plansListItem__title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  .plansListItem ul {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  .plansListItem li {
+    height: 41px;
+  }
+
+  .plansListItem li img {
+    width: 13.5px;
+    height: 16.5px;
+  }
+
+  .plansListItem__includeOrExclude {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 19px;
+  }
 }
