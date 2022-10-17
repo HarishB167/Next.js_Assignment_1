@@ -24,3 +24,11 @@
 .faqListItem__answer {
   padding: 6px 6px 0 6px;
 }
+
+@media screen and (min-width: 1000px) {
+  .faqListItem {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+  }
+}

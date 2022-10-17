@@ -1,4 +1,4 @@
-.plansList {
+.sparePartsList {
   list-style: none;
   padding: 0;
   font-family: "Mulish";
@@ -14,34 +14,25 @@
   justify-content: center;
 }
 
-.plansListItem {
+.sparePartsListItem {
   margin: 11px 0;
-  min-width: 28.38vw;
+  min-width: 346px;
+  width: 28.38vw;
 }
 
-.plansListItem > div {
+.sparePartsListItem > div {
   display: flex;
   flex-direction: column;
   border: 0.599997px solid #d9d9d9;
   border-radius: 6px;
 }
 
-.plansListItem__cardBanner {
-  height: 144px;
-  max-width: 100%;
-  object-fit: cover;
-  align-self: center;
-  margin-bottom: 6px;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
-}
-
-.plansListItem__title {
+.sparePartsListItem__title {
   margin-left: 7.8px;
   margin-top: 5px;
 }
 
-.plansListItem ul {
+.sparePartsListItem ul {
   margin: 11px 14.4px 1.2px 10.8px;
   list-style: none;
   font-size: 10.7999px;
@@ -49,7 +40,7 @@
   padding: 0;
 }
 
-.plansListItem li {
+.sparePartsListItem li {
   height: 24.6px;
   border: 0.6px solid #cccccc;
   border-radius: 3px;
@@ -59,11 +50,12 @@
   margin: 2.1px 0;
 }
 
-.plansListItem__coversTitle {
+.sparePartsListItem__partName {
   flex-grow: 1;
+  max-width: 70%;
 }
 
-.plansListItem li img {
+.sparePartsListItem li img {
   width: 8.1px;
   height: 10px;
   margin-right: 13px;
@@ -71,51 +63,40 @@
 }
 
 @media screen and (min-width: 1000px) {
-  .plansListItem {
+  .sparePartsListItem {
     border: 1px solid #d9d9d9;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
   }
 
-  .plansListItem {
+  .sparePartsListItem {
     margin-left: 0.75vw;
     margin-right: 0.75vw;
     max-width: 28.38vw;
     min-width: 340px;
   }
 
-  .plansListItem__cardBanner {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    max-width: 28.38vw;
-    min-width: 340px;
-  }
-
-  .plansListItem__title {
+  .sparePartsListItem__title {
     font-weight: 700;
     font-size: 18px;
     line-height: 23px;
   }
 
-  .plansListItem ul {
+  .sparePartsListItem ul {
     font-weight: 700;
     font-size: 18px;
     line-height: 23px;
   }
 
-  .plansListItem li {
+  .sparePartsListItem li {
     height: 41px;
     align-items: center;
   }
 
-  .plansListItem li img {
-    width: 13.5px;
-    height: 16.5px;
-  }
-
-  .plansListItem__includeOrExclude {
+  .sparePartsListItem__price {
     font-weight: 500;
     font-size: 15px;
     line-height: 19px;
+    margin-left: 5px;
   }
 }

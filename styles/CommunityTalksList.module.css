@@ -69,3 +69,41 @@
   line-height: 10px;
   margin: 10px 0;
 }
+
+@media screen and (min-width: 1000px) {
+  .communityTalksListItem__border {
+    border: 0;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+
+  .communityTalksListItem__name {
+    font-weight: 700;
+    font-size: 18.9474px;
+    line-height: 24px;
+    color: #000000;
+  }
+
+  .communityTalksListItem__dateTime {
+    font-weight: 400;
+    font-size: 14.2105px;
+    line-height: 18px;
+  }
+
+  .communityTalksListItem__row1 {
+    border-left: 3px solid #000000;
+    margin-top: 8px;
+  }
+
+  .communityTalksListItem__row2 {
+    font-weight: 400;
+    font-size: 19.8026px;
+    line-height: 25px;
+  }
+
+  .communityTalksListItem button {
+    display: none;
+  }
+}

@@ -9,6 +9,7 @@ import StarReviews from "../components/StarReviews";
 import ProfessionalDetailCard from "../components/ProfessionalDetailCard";
 import FaqList from "../components/FaqList";
 import CommunityTalksList from "../components/CommunityTalksList";
+import SparePartsList from "../components/SparePartsList";
 
 export default function Location() {
   const offerBanner = data[0].offerBanner;
@@ -57,6 +58,8 @@ export default function Location() {
     : `linear-gradient(90deg, rgba(0, 0, 0, 0.4) 0%,
         rgba(0, 0, 0, 0) 100%),
         url("${data[0].heroSection.mobBanner}")`;
+
+  const sparePartsList = data[0].spareParts;
 
   return (
     <>
@@ -151,6 +154,13 @@ export default function Location() {
             <PlansList plansList={plansList} />
           </div>
 
+          <div className={styles.sectionSpareParts}>
+            <div className={styles.sectionSpareParts__title}>
+              Spare Parts Price with Brands
+            </div>
+            <SparePartsList sparePartsList={sparePartsList} />
+          </div>
+
           <div className={styles.sectionWhyChooseUs}>
             <div className={styles.sectionWhyChooseUs___title}>
               Why Choose us?
@@ -180,11 +190,11 @@ export default function Location() {
               </div>
               <div>
                 <img src="/images/sanitizer.svg" alt="" />
-                <span>Sanitizetion of tool &amp; area</span>
+                <span>Sanitization of tool &amp; area</span>
               </div>
               <div>
                 <img src="/images/arogya_setu.svg" alt="" />
-                <span>Arogya setu to ensure safely</span>
+                <span>Arogya setu to ensure safety</span>
               </div>
             </div>
           </div>

@@ -187,9 +187,10 @@
   outline: 0;
 }
 
-/* Browse AMC Plans section */
+/* Browse AMC Plans and Spare Parts section */
 
-.sectionBrowseAmcPlans {
+.sectionBrowseAmcPlans,
+.sectionSpareParts {
   padding: 20px 7px 0 7px;
   width: 100%;
 
@@ -283,7 +284,7 @@
   min-width: 104.49px;
   margin: 1.5px;
   width: calc(33% - 2px);
-  height: 42.18px;
+  height: 48.18px;
   padding: 6px;
   object-fit: scale-down;
   border: 0.58px solid #000000;
@@ -697,13 +698,123 @@
     display: none;
   }
 
-  /* Browse AMC Plans section */
+  /* Browse AMC Plans and Spare Parts section */
 
-  .sectionBrowseAmcPlans__title {
+  .sectionBrowseAmcPlans__title,
+  .sectionSpareParts__title {
     font-weight: 700;
     font-size: 20px;
     line-height: 25px;
     margin-left: 17.5px;
+  }
+
+  /* Why choose us, Safety Measures,
+ Trusted Service & Reviews provider,
+ Reviews, Awards & Certification section */
+
+  .sectionWhyChooseUs___title,
+  .sectionSafetyMeasures___title,
+  .sectionTrustedServProv___title,
+  .sectionReviews__title,
+  .sectionAwardsCertification__title,
+  .sectionProfessionalsList__title {
+    margin-top: 20px;
+    margin-left: 22px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    margin-bottom: 15px;
+  }
+
+  .sectionWhyChooseUs hr,
+  .sectionSafetyMeasures hr,
+  .sectionTrustedServProv hr,
+  .sectionReviews hr .sectionAwardsCertification hr {
+    border-top: 2px solid #cccccc;
+  }
+
+  .sectionWhyChooseUs__imagesList {
+    margin-top: 32.5px;
+    margin-bottom: 32.5px;
+  }
+
+  .sectionWhyChooseUs__imagesList img {
+    width: 172px;
+    height: 117px;
+  }
+
+  .sectionSafetyMeasures__imagesList img {
+    width: 87px;
+    height: 87px;
+    margin-bottom: 21px;
+  }
+
+  .sectionSafetyMeasures__imagesList span {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 19px;
+    max-width: 201px;
+  }
+
+  .sectionTrustedServProv__imagesList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .sectionTrustedServProv__imagesList img {
+    min-width: 180px;
+    margin: 2.5px;
+    width: 180px;
+    height: 83px;
+    border: 1px solid #000000;
+  }
+
+  /* Community Talks Section */
+  .sectionCommunityTalks__title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+  }
+
+  /* Quick Links section */
+  .sectionQuickLinks {
+    margin-bottom: 126.5px;
+  }
+
+  /* Footer section */
+  .sectionFooter {
+    display: flex;
+    flex-direction: column;
+    padding-top: 60.27px;
+    padding-bottom: 36px;
+  }
+
+  .sectionFooter ul {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sectionFooter ul li {
+    margin: 0 2.81vw;
+  }
+
+  .sectionFooter__text {
+    order: -1;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .sectionFooter__heading_text {
+    font-size: 16px;
+    line-height: 24px;
+    margin-left: 27.5vw;
+  }
+
+  .sectionFooter__headings {
+    font-size: 16px;
+    line-height: 24px;
   }
 }
 
