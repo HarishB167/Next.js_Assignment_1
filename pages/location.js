@@ -61,6 +61,8 @@ export default function Location() {
 
   const sparePartsList = data[0].spareParts;
 
+  const carouselServices = data[0].carousel;
+
   return (
     <>
       <div
@@ -125,183 +127,287 @@ export default function Location() {
         </div>
 
         <div className={styles.secondColumn}>
-          {isBigScreen && (
-            <ul className={styles.breadcrumb}>
-              <li className={styles.breadcrumb_root}>
-                <span>Home</span>
-              </li>
-              <li className={styles.breadcrumb_item}>
-                <span>Noida</span>
-              </li>
-              <li className={styles.breadcrumb_current}>
-                <span>Water Purifier</span>
-              </li>
-            </ul>
-          )}
+          <div className={styles.secondColumn__row1}>
+            {isBigScreen && (
+              <ul className={styles.breadcrumb}>
+                <li className={styles.breadcrumb_root}>
+                  <span>Home</span>
+                </li>
+                <li className={styles.breadcrumb_item}>
+                  <span>Noida</span>
+                </li>
+                <li className={styles.breadcrumb_current}>
+                  <span>Water Purifier</span>
+                </li>
+              </ul>
+            )}
 
-          <div className={styles.sectionServicesList}>
-            <div className={styles.sectionServiceList__title}>
-              Water Purifier Service Near You
-            </div>
-            <ServiceList servicesList={servicesList} />
-            <button className={styles.sectionServiceList__moreBtn}>More</button>
-          </div>
-
-          <div className={styles.sectionBrowseAmcPlans}>
-            <div className={styles.sectionBrowseAmcPlans__title}>
-              Browse AMC Plans
-            </div>
-            <PlansList plansList={plansList} />
-          </div>
-
-          <div className={styles.sectionSpareParts}>
-            <div className={styles.sectionSpareParts__title}>
-              Spare Parts Price with Brands
-            </div>
-            <SparePartsList sparePartsList={sparePartsList} />
-          </div>
-
-          <div className={styles.sectionWhyChooseUs}>
-            <div className={styles.sectionWhyChooseUs___title}>
-              Why Choose us?
-            </div>
-            <hr />
-            <div className={styles.sectionWhyChooseUs__imagesList}>
-              <img src="/images/certified_professionals.svg" alt="" />
-              <img src="/images/service_warranty.svg" alt="" />
-              <img src="/images/instant_booking.svg" alt="" />
-              <img src="/images/affordable_price.svg" alt="" />
-            </div>
-          </div>
-
-          <div className={styles.sectionSafetyMeasures}>
-            <div className={styles.sectionSafetyMeasures___title}>
-              Safety Measures
-            </div>
-            <hr />
-            <div className={styles.sectionSafetyMeasures__imagesList}>
-              <div>
-                <img src="/images/masks.svg" alt="" />
-                <span>Usage of masks &amp; gloves</span>
+            <div className={styles.sectionServicesList}>
+              <div className={styles.sectionServiceList__title}>
+                Water Purifier Service Near You
               </div>
-              <div>
-                <img src="/images/thermometer.svg" alt="" />
-                <span>Temperature checks</span>
+              <ServiceList servicesList={servicesList} />
+              <button className={styles.sectionServiceList__moreBtn}>
+                More
+              </button>
+            </div>
+
+            <div className={styles.sectionBrowseAmcPlans}>
+              <div className={styles.sectionBrowseAmcPlans__title}>
+                Browse AMC Plans
               </div>
-              <div>
-                <img src="/images/sanitizer.svg" alt="" />
-                <span>Sanitization of tool &amp; area</span>
+              <PlansList plansList={plansList} />
+            </div>
+
+            <div className={styles.sectionSpareParts}>
+              <div className={styles.sectionSpareParts__title}>
+                Spare Parts Price with Brands
               </div>
-              <div>
-                <img src="/images/arogya_setu.svg" alt="" />
-                <span>Arogya setu to ensure safety</span>
+              <SparePartsList sparePartsList={sparePartsList} />
+            </div>
+
+            <div className={styles.sectionWhyChooseUs}>
+              <div className={styles.sectionWhyChooseUs___title}>
+                Why Choose us?
+              </div>
+              <hr />
+              <div className={styles.sectionWhyChooseUs__imagesList}>
+                <img src="/images/certified_professionals.svg" alt="" />
+                <img src="/images/service_warranty.svg" alt="" />
+                <img src="/images/instant_booking.svg" alt="" />
+                <img src="/images/affordable_price.svg" alt="" />
               </div>
             </div>
-          </div>
 
-          <div className={styles.sectionTrustedServProv}>
-            <div className={styles.sectionTrustedServProv___title}>
-              Trusted Service Provider
+            <div className={styles.sectionSafetyMeasures}>
+              <div className={styles.sectionSafetyMeasures___title}>
+                Safety Measures
+              </div>
+              <hr />
+              <div className={styles.sectionSafetyMeasures__imagesList}>
+                <div>
+                  <img src="/images/masks.svg" alt="" />
+                  <span>Usage of masks &amp; gloves</span>
+                </div>
+                <div>
+                  <img src="/images/thermometer.svg" alt="" />
+                  <span>Temperature checks</span>
+                </div>
+                <div>
+                  <img src="/images/sanitizer.svg" alt="" />
+                  <span>Sanitization of tool &amp; area</span>
+                </div>
+                <div>
+                  <img src="/images/arogya_setu.svg" alt="" />
+                  <span>Arogya setu to ensure safety</span>
+                </div>
+              </div>
             </div>
-            <hr />
-            <div className={styles.sectionTrustedServProv__imagesList}>
-              {brandsImageLinks.map((link) => (
-                <img src={link} />
-              ))}
-            </div>
-          </div>
 
-          <div className={styles.sectionReviews}>
-            <div className={styles.sectionReviews__title}>
-              Read What our customers say
+            <div className={styles.sectionTrustedServProv}>
+              <div className={styles.sectionTrustedServProv___title}>
+                Trusted Service Provider
+              </div>
+              <hr />
+              <div className={styles.sectionTrustedServProv__imagesList}>
+                {brandsImageLinks.map((link) => (
+                  <img src={link} />
+                ))}
+              </div>
             </div>
-            <hr />
-            <div className={styles.sectionReviews__reviewsList}>
-              {reviews.map((review) => (
-                <>
-                  <div className={styles.sectionReviews__reviewsListItem}>
-                    <img src="/images/user_icon.svg" />
-                    <StarReviews rating={parseInt(review.rating)} />
-                    <div className={styles.sectionReviews__custName}>
-                      {review.custName}
+
+            <div className={styles.sectionReviews}>
+              <div className={styles.sectionReviews__title}>
+                Read What our customers say
+              </div>
+              <hr />
+              <div className={styles.sectionReviews__reviewsList}>
+                {reviews.map((review) => (
+                  <>
+                    <div className={styles.sectionReviews__reviewsListItem}>
+                      <img src="/images/user_icon.svg" />
+                      <StarReviews rating={parseInt(review.rating)} />
+                      <div className={styles.sectionReviews__custName}>
+                        {review.custName}
+                      </div>
+                      <div className={styles.sectionReviews__review}>
+                        {review.review}
+                      </div>
                     </div>
-                    <div className={styles.sectionReviews__review}>
-                      {review.review}
+                    <div className={styles.sectionReviews__vr}></div>
+                  </>
+                ))}
+              </div>
+            </div>
+
+            <div className={styles.sectionAwardsCertification}>
+              <div className={styles.sectionAwardsCertification__title}>
+                Award and Certification
+              </div>
+              <hr />
+              <div className={styles.sectionAwardsCertification__imagesList}>
+                <img src="/images/certificate_iso.svg" alt="" />
+                <img src="/images/registered_trademark.svg" alt="" />
+                <img src="/images/consumer_excellence_award.svg" alt="" />
+              </div>
+            </div>
+
+            <div className={styles.sectionProfessionalsList}>
+              <div className={styles.sectionProfessionalsList__title}>
+                Our Professional
+              </div>
+              <hr />
+              <div
+                className={styles.sectionProfessionalsList__professionalList}
+              >
+                {professionalsList.map((item, idx) => (
+                  <ProfessionalDetailCard key={idx} details={item} />
+                ))}
+              </div>
+            </div>
+
+            <div className={styles.sectionMoreServices}>
+              <span className={styles.sectionMoreServices__title}>
+                YOU MAY ALSO NEED THESE SERVICES
+              </span>
+              <div className={styles.sectionMoreServices__list}>
+                <span>WASHING MACHINE</span>
+                <span>WASHING MACHINE</span>
+                <span>WASHING MACHINE</span>
+                <span>WASHING MACHINE</span>
+              </div>
+            </div>
+
+            <div className={styles.sectionMostUsedServices}>
+              <div className={styles.sectionMostUsedServices__title}>
+                Most Used Services
+              </div>
+              <div className={styles.sectionMostUsedServices__subtitle}>
+                Premium Home Services
+              </div>
+              <div className={styles.sectionMostUsedServices__servicesList}>
+                <div>
+                  <img src="/images/termites.png" />
+                  <span>Termite Control</span>
+                </div>
+                <div>
+                  <img src="/images/bed_bugs.png" />
+                  <span>Bed Bugs</span>
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.sectionTop10HouseCleaningServices}>
+              <h1>Top 10 House Cleaning Service in Delhi NCR :</h1>
+
+              <h2>Services Included in House Cleaning Services:</h2>
+              <hr />
+              <ol>
+                <li>
+                  Includes of all Rooms Cleaning, Bathroom Cleaning, Kitchen
+                  Cleaning and Balcony Area Cleaning
+                </li>
+                <li>Ceiling dusting</li>
+                <li>Fans/Ac dusting &amp; Cleaning</li>
+                <li>Walls dusting</li>
+                <li>Window and channel cleaning</li>
+                <li>
+                  Curtain Cleaning, Sofa Cleaning, mattress &amp; carpet
+                  vacuuming
+                </li>
+                <li>Glass Cleaning</li>
+                <li>
+                  All Wooden Furniture, Doors, etc. cleaning and Polishing
+                </li>
+                <li>Floor Scrubbing</li>
+                <li>
+                  After removing the fridge, almirah, sofa, and cleaning the
+                  floor, the goods will be put back in place
+                </li>
+                <li>
+                  Oil layer on the kitchen wall will be removed by the kitchen
+                  cleaner
+                </li>
+                <li>
+                  Water stains, pan stains, or floor stains in the bathroom will
+                  be removed
+                </li>
+              </ol>
+
+              <h2>
+                Materials &amp; Equipment's Used In House Cleaning Services:
+              </h2>
+              <hr />
+              <ol>
+                <li>Professional cleaning chemicals</li>
+                <li>Single-disc floor scrubber/handheld scrubber</li>
+                <li>Vacuum Cleaner</li>
+                <li>Microfiber Cloths for dusting</li>
+                <li>Mops, Scotch Brite / foam or scrubbers.</li>
+                <li>Ladders, bucket, wiper and mugs etc.</li>
+              </ol>
+
+              <h2>Benefits Of Booking Us For Home Cleaning Services:</h2>
+              <hr />
+              <ol>
+                <li>
+                  Best price guarantee: We offer you the best and lowest price
+                  offered in the market.
+                </li>
+                <li>
+                  Five Star Rated Experts: Providing you with the top certified
+                  and accomplished practitioners.
+                </li>
+                <li>
+                  Timely Service: Our specialists are committed to delivering
+                  timely services.
+                </li>
+                <li>
+                  100% safe chemicals usage: Our Experts use environmentally
+                  friendly chemicals
+                </li>
+              </ol>
+
+              <h2>Safety Precautions Follows In House Cleaning Services:</h2>
+              <hr />
+              <ol>
+                <li>Minimal touch contact &amp; social distancing</li>
+                <li>Daily temperature monitoring.</li>
+                <li>Wearing masks and gloves.</li>
+                <li>Regular sanitization of hands.</li>
+                <li>Compliant of the Aarogaya Setu App.</li>
+              </ol>
+            </div>
+
+            <div className={styles.carouselServices}>
+              <div className={styles.carouselServices__title}>
+                {carouselServices.title}
+              </div>
+              <div className={styles.carouselServices__list}>
+                {carouselServices.cardItems.map((item) => (
+                  <a href={item.landingUrl}>
+                    <div>
+                      <img src={item.imgUrl} />
+                      <span>{item.displayName}</span>
                     </div>
-                  </div>
-                  <div className={styles.sectionReviews__vr}></div>
-                </>
-              ))}
-            </div>
-          </div>
-
-          <div className={styles.sectionAwardsCertification}>
-            <div className={styles.sectionAwardsCertification__title}>
-              Award and Certification
-            </div>
-            <hr />
-            <div className={styles.sectionAwardsCertification__imagesList}>
-              <img src="/images/certificate_iso.svg" alt="" />
-              <img src="/images/registered_trademark.svg" alt="" />
-              <img src="/images/consumer_excellence_award.svg" alt="" />
-            </div>
-          </div>
-
-          <div className={styles.sectionProfessionalsList}>
-            <div className={styles.sectionProfessionalsList__title}>
-              Our Professional
-            </div>
-            <hr />
-            <div className={styles.sectionProfessionalsList__professionalList}>
-              {professionalsList.map((item, idx) => (
-                <ProfessionalDetailCard key={idx} details={item} />
-              ))}
-            </div>
-          </div>
-
-          <div className={styles.sectionMoreServices}>
-            <span className={styles.sectionMoreServices__title}>
-              YOU MAY ALSO NEED THESE SERVICES
-            </span>
-            <div className={styles.sectionMoreServices__list}>
-              <span>WASHING MACHINE</span>
-              <span>WASHING MACHINE</span>
-              <span>WASHING MACHINE</span>
-              <span>WASHING MACHINE</span>
-            </div>
-          </div>
-
-          <div className={styles.sectionMostUsedServices}>
-            <div className={styles.sectionMostUsedServices__title}>
-              Most Used Services
-            </div>
-            <div className={styles.sectionMostUsedServices__subtitle}>
-              Premium Home Services
-            </div>
-            <div className={styles.sectionMostUsedServices__servicesList}>
-              <div>
-                <img src="/images/termites.png" />
-                <span>Termite Control</span>
-              </div>
-              <div>
-                <img src="/images/bed_bugs.png" />
-                <span>Bed Bugs</span>
+                  </a>
+                ))}
               </div>
             </div>
-          </div>
 
-          <div className={styles.sectionFAQ}>
-            <FaqList faqList={faq} />
-          </div>
-
-          <div className={styles.sectionCommunityTalks}>
-            <div className={styles.sectionCommunityTalks__title}>
-              Community Talks
+            <div className={styles.sectionFAQ}>
+              <FaqList faqList={faq} />
             </div>
-            <CommunityTalksList
-              talksList={communityTalks}
-              showReplayButton={true}
-            />
+
+            <div className={styles.sectionCommunityTalks}>
+              <div className={styles.sectionCommunityTalks__title}>
+                Community Talks
+              </div>
+              <CommunityTalksList
+                talksList={communityTalks}
+                showReplayButton={true}
+              />
+            </div>
           </div>
 
           <div className={styles.sectionQuickLinks}>
