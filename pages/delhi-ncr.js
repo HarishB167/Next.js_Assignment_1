@@ -51,6 +51,7 @@ export default function Location() {
   const alsoAvailableIn = data[0].internalLinks.alsoAvailableIn.slice(0, 10);
 
   const isBigScreen = useMediaQuery({ query: "(min-width: 1000px)" });
+
   const backgroundImageUrl = isBigScreen
     ? `linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%,
         rgba(0, 0, 0, 0) 60%),
@@ -128,7 +129,7 @@ export default function Location() {
 
         <div className={styles.secondColumn}>
           <div className={styles.secondColumn__row1}>
-            {isBigScreen && (
+            
               <ul className={styles.breadcrumb}>
                 <li className={styles.breadcrumb_root}>
                   <span>Home</span>
@@ -140,7 +141,6 @@ export default function Location() {
                   <span>Water Purifier</span>
                 </li>
               </ul>
-            )}
 
             <div className={styles.sectionServicesList}>
               <div className={styles.sectionServiceList__title}>

@@ -71,8 +71,12 @@
   align-items: center;
 }
 
-/* Service Selection section */
+/* Bread crumbs */
+.breadcrumb {
+  display: none;
+}
 
+/* Service Selection section */
 .sectionServiceSelection {
   margin: 5px 10px 10px;
   width: calc(100% - 20px);

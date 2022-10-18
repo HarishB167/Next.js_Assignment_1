@@ -8,9 +8,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%),
-    url("/images/plumber_image.png");
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 321px;
@@ -94,7 +91,7 @@
 }
 
 .sectionBenefits__largeScreenImg {
-  display: none;
+  width: 100%;
 }
 
 .sectionBenefits__title {
@@ -164,6 +161,21 @@
   line-height: 149.52%;
   text-align: justify;
   color: #ffffff;
+}
+
+.sectionAbout__featuresList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.sectionAbout__featuresList img {
+  width: 167px;
+  height: 101px;
+  box-shadow: 0px 0px 4.89343px rgba(0, 0, 0, 0.25);
+  border-radius: 3.67007px;
+  margin: 4px;
 }
 
 .sectionAbout__feature {
@@ -256,12 +268,6 @@
 
 @media screen and (min-width: 1200px) {
   .sectionMain {
-    background: linear-gradient(
-        90deg,
-        rgba(0, 0, 0, 0) 26.82%,
-        rgba(0, 0, 0, 0.7) 58.3%
-      ),
-      url("/images/plumber_and_kitchen.png");
     background-size: cover;
     padding-top: 66px;
     flex-direction: row;
@@ -364,9 +370,9 @@
 
   .sectionBenefits__largeScreenImg {
     display: block;
-    width: 510px;
     height: 361px;
-    margin-top: 23px;
+    width: 100%;
+    object-fit: cover;
   }
 
   .sectionBenefits__title {
@@ -391,6 +397,7 @@
 
   .sectionAbout > div:first-child {
     max-width: 725px;
+    width: 57%;
   }
 
   .sectionAbout__title {
@@ -404,17 +411,19 @@
     line-height: 149.52%;
   }
 
-  .sectionAbout__feature {
-    width: 274px;
-    height: 166px;
-    margin: 15px;
-    font-size: 16.6065px;
-    line-height: 20px;
+  .sectionAbout__featuresList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 43%;
   }
 
-  .sectionAbout__feature img {
-    width: 75px;
-    height: 75px;
+  .sectionAbout__featuresList img {
+    width: 14.27vw;
+    height: 8.64vw;
+    margin: 15px;
   }
 
   /* Footer section */

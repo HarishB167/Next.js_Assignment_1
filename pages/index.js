@@ -1,36 +1,86 @@
+import { useState, useEffect } from "react";
+import { useMediaQuery } from "react-responsive";
 import Head from "next/head";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import styles from "../styles/Home.module.css";
+import { data } from "../json/landingPage";
 
 export default function Home() {
+  const isBigScreen = useMediaQuery({ query: "(min-width: 1000px)" });
+
+  const [bgImgUrl, setBgImgUrl] = useState(
+    `url("${data[0].heroSection.webBanner}")`
+  );
+  const [banner5Img, setBanner5Img] = useState("");
+
+  useEffect(() => {
+    const backgroundImageUrl = isBigScreen
+      ? `url("${data[0].heroSection.webBanner}")`
+      : `url("${data[0].heroSection.mobBanner}")`;
+    setBgImgUrl(backgroundImageUrl);
+
+    const bannerImg = isBigScreen
+      ? `${data[0].banner5.webImg}`
+      : `${data[0].banner5.mobImg}`;
+    setBanner5Img(bannerImg);
+  }, [isBigScreen]);
+
+  const router = useRouter();
+  const [selectCity, setSelectCity] = useState();
+
+  const onSelectChange = (e) => {
+    setSelectCity(e.target.value);
+    if (e.target.value && e.target.value != "") router.push(e.target.value);
+  };
+
   return (
     <>
-      <div className={styles.sectionMain}>
+      <Head>
+        <title>{data[0].title}</title>
+      </Head>
+
+      <div
+        className={styles.sectionMain}
+        style={{
+          backgroundImage: bgImgUrl,
+        }}
+      >
         <div>
-          <div className={styles.subtitle}>URBAN CLEANING EXPERT</div>
-          <div className={styles.taglineBig}>
-            Quality home cleaning servcies, on demand
-          </div>
+          <div className={styles.subtitle}>{data[0].heroSection.title}</div>
+          <div className={styles.taglineBig}>{data[0].heroSection.heading}</div>
           <div className={styles.taglineSmall}>
-            Experienced, hand-picked professionals to serve you at your doorstep
+            {data[0].heroSection.description}
           </div>
           <select
             className={styles.selectLocation}
             name="location"
             id="location"
+            onChange={onSelectChange}
+            value={selectCity}
           >
-            <option>Select your Location</option>
-            <option value="Delhi">Delhi</option>
-            <option value="Mumbar">Mumbai</option>
-            <option value="Lucknow">Lucknow</option>
+            <option value="">Select your Location</option>
+            {data[0].heroSection.form.map((item, idx) => (
+              <option key={idx} value={item.landingUrl}>
+                {item.dropdownItem}
+              </option>
+            ))}
           </select>
           <div className={styles.selectLocationBigScreen}>
             <div>Where do you need a service?</div>
             <div className={styles.selectLocationBigScreen__select}>
-              <select name="location" id="">
-                <option>Select your city</option>
-                <option value="Delhi">Delhi</option>
-                <option value="Mumbai">Mumbai</option>
+              <select
+                name="location"
+                id=""
+                onChange={onSelectChange}
+                value={selectCity}
+              >
+                <option value="">Select your city</option>
+                {data[0].heroSection.form.map((item, idx) => (
+                  <option key={idx} value={item.landingUrl}>
+                    {item.dropdownItem}
+                  </option>
+                ))}
               </select>
               <img src="/images/select_down_arrow.svg" />
             </div>
@@ -40,74 +90,26 @@ export default function Home() {
       <div className={styles.sectionBenefits}>
         <img
           className={styles.sectionBenefits__largeScreenImg}
-          src="/images/why-standing-let-us-dance_largeScreen.png"
-          alt=""
+          src={banner5Img}
+          alt={data[0].banner5.altText}
         />
-        <div>
-          <div className={styles.sectionBenefits__title}>
-            Why People Choose Us
-          </div>
-          <div className={styles.sectionBenefits__list}>
-            <ul>
-              <li>Affordable Rates</li>
-              <li>On Time Service</li>
-              <li>Verified Professionals</li>
-              <li>Excellent Service</li>
-            </ul>
-            <img
-              src="/images/why-standing-let-us-dance.png"
-              alt="Girl holding smartphone and listening music"
-              loading="lazy"
-            />
-          </div>
-        </div>
       </div>
       <div className={styles.sectionAbout}>
         <div>
           <div>
             <span className={styles.sectionAbout__title}>
-              About Urban Cleaning Expert
+              {data[0].banner4.title}
             </span>
           </div>
           <div className={styles.sectionAbout__paragraph}>
-            Urban Cleaning Expert is one of the most trusted service providers
-            in India. We provide excellent services for several home appliance
-            care, home care and Cleaning services. Our services are trusted by a
-            large number of clients and Industries. It is the result of our
-            dedicated teamwork, which makes us one of the most trusted service
-            providers across the nation. Our company is staffed with expert and
-            well-trained professionals who carry several years of experience
-            with them and all of them work tirelessly to earn our customer
-            satisfaction.
+            {data[0].banner4.description}
           </div>
         </div>
-        <div className="d-flex flex-column align-items-center">
-          <div className="d-flex">
-            <div className={styles.sectionAbout__feature}>
-              <img src="/images/clock.png" alt="Clock" />
-              <div>ON TIME SERVICE</div>
-            </div>
-            <div className={styles.sectionAbout__feature}>
-              <img src="/images/rupee_symbol.png" alt="Rupee symbol" />
-              <div>TRANSPARENT PRICES</div>
-            </div>
-          </div>
-          <div className="d-flex">
-            <div className={styles.sectionAbout__feature}>
-              <img
-                src="/images/professional_icon.png"
-                alt="Professional icon"
-              />
-              <div>TRAINED PROFESSIONALS</div>
-            </div>
-            <div className={styles.sectionAbout__feature}>
-              <img
-                src="/images/assured_service_quality.png"
-                alt="Service quality icon"
-              />
-              <div>ASSURED SERVICE QUALITY</div>
-            </div>
-          </div>
+
+        <div className={styles.sectionAbout__featuresList}>
+          {data[0].banner4.imgs.map((url, idx) => (
+            <img key={idx} src={url} />
+          ))}
         </div>
       </div>
       <div className={styles.sectionFooter}>
